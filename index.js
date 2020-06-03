@@ -2,7 +2,6 @@ const Joi = require('@hapi/joi');
 const express = require('express');
 const AWSXRay = require('aws-xray-sdk');
 const rp = require('request-promise');
-const dns = require('dns');
 const app = express();
 
 //Capture all outgoing http requests
@@ -25,10 +24,6 @@ app.get('/', (req, res) => {
 
 app.get('/api/books', async (req,res) =>{
     console.log('Method /api/books called!')
-    let req_body='Initialize variable';
-    var w3 = dns.lookup('book-api.local', function (err, addresses, family) {
-        console.log(`book-api.local resolves to ${addresses}`);
-      });
     
     // querying book-api service that is in the same VPC.  
     rp('http://book-api.local:3000/api/books')
