@@ -10,3 +10,6 @@ Incoming requests are traced on express following:
 
 Outgoing HTTP request are traced on the client: 
 > https://docs.aws.amazon.com/xray/latest/devguide/xray-sdk-nodejs-httpclients.html
+
+Example Screenshot of X-Ray Trace
+![Image of X-Ray Trace](/image/trace.png)
